@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="scrollApp">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap 3 Responsive Layout Example</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+<script src="ng-infinite-scroll.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="app.js"></script>
+<style>
+       
+      
+</style>
+</head>
+<body>
+
+<div class="container" ng-controller="infiniteScrollController">
+   
+    <table class="table table-fixed" id="loggingTable" infinite-scroll="loadMore()" infinite-scroll-container='".constrained"' infinite-scroll-distance="1" infinite-scroll-parent="true">  
+        <thead>  
+            <tr>  
+			<th>Title</th>
+                <th>Author</th>  
+                <th>Price</th>  
+                <th>Rating</th>  
+				 <th>Image</th>  
+               
+            </tr>  
+        </thead>  
+        <tbody>  
+            <tr data-ng-repeat="logEvent in logEventFilter = (logEvents | filter:searchTerm | limitTo:numberToDisplay) track by $index">  
+                <td>{{logEvent.title}}</td>  
+				<td>{{logEvent.author}}</td>  
+                <td>{{logEvent.price}}</td>  
+                <td>{{logEvent.rating}}</td>  
+				<td><img src ={{logEvent.image}} style="width:50px;height:60px;"/></td>  
+               
+            </tr>  
+          
+        </tbody>  
+    </table> 
+	
+	
+	
+
+
+ 
+	  
+	  
+	  
+ 
+    
+    <hr>
+    <div class="row">
+        <div class="col-sm-12">
+            <footer>
+                <p>&copy; Copyright 2017</p>
+            </footer>
+        </div>
+    </div>
+</div>
+</body>
+</html>                            
